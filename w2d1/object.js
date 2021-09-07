@@ -1,3 +1,4 @@
+module.exports = { addBook, findTitle, findAuthor, findId };
 const library = [];
 /**
  *
@@ -8,7 +9,7 @@ const library = [];
  */
 function addBook(title, author, libraryId) {
   let object1 = {};
-  object1.titile = title;
+  object1.title = title;
   object1.author = author;
   object1.libraryId = libraryId;
   return library.push(object1);
@@ -23,7 +24,7 @@ console.log(library);
 function findTitle() {
   let title = [];
   for (let i = 0; i < library.length; i++) {
-    title.push(library[i].titile);
+    title.push(library[i].title);
   }
   return title.sort();
 }
