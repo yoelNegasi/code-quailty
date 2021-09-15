@@ -8,12 +8,12 @@ const bank = {
   ],
 };
 
-bank.saveTransaction = function (id, amount) {
-  const customer = bank.transactionsDB.find(
-    (customer) => customer.customerId === id
-  );
-  customer.customerTransactions.push(amount);
-};
+// bank.saveTransaction = function (id, amount) {
+//   const customer = bank.transactionsDB.find(
+//     (customer) => customer.customerId === id
+//   );
+//   customer.customerTransactions.push(amount);
+// };
 
 bank.debit = function (id, amount) {
   let sum = 0;
@@ -32,35 +32,35 @@ bank.debit = function (id, amount) {
   return bank.transactionsDB[id - 1].customerTransactions;
 };
 
-bank.credit = function (id, amount) {
-  this.saveTransaction(id, amount);
-};
+// bank.credit = function (id, amount) {
+//   this.saveTransaction(id, amount);
+// };
 
-bank.getBalance = function (id) {
-  let sum = 0;
-  for (
-    let i = 0;
-    i < bank.transactionsDB[id - 1].customerTransactions.length;
-    i++
-  ) {
-    sum += bank.transactionsDB[id - 1].customerTransactions[i];
-  }
+// bank.getBalance = function (id) {
+//   let sum = 0;
+//   for (
+//     let i = 0;
+//     i < bank.transactionsDB[id - 1].customerTransactions.length;
+//     i++
+//   ) {
+//     sum += bank.transactionsDB[id - 1].customerTransactions[i];
+//   }
 
-  return sum;
-};
+//   return sum;
+// };
 
-bank.bankBalance = function () {
-  let sum = 0;
-  for (let i = 0; i < bank.transactionsDB.length; i++) {
-    for (
-      let j = 0;
-      j < bank.transactionsDB[i].customerTransactions.length;
-      j++
-    ) {
-      sum += bank.transactionsDB[i].customerTransactions[j];
-    }
-  }
-  return sum;
-};
+// bank.bankBalance = function () {
+//   let sum = 0;
+//   for (let i = 0; i < bank.transactionsDB.length; i++) {
+//     for (
+//       let j = 0;
+//       j < bank.transactionsDB[i].customerTransactions.length;
+//       j++
+//     ) {
+//       sum += bank.transactionsDB[i].customerTransactions[j];
+//     }
+//   }
+//   return sum;
+// };
 
 module.exports = { bank };
